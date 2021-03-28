@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        可以将js代码编写到外部js文件中，然后通过script标签引入,
+        优点：可在不同的网页中同时引用，也可利用到浏览器的缓存机制。
+        推荐使用的方式  
+
+        script标签一旦引用外部文件，就不能编写代码了。即使编写，浏览器也会忽略
+        如果需要则可以创建一个新的script标签用于编写内部代码
+     -->
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script>
+        alert("我是内部的js代码");
+    </script>
+
+    <!-- 
+        可以将js代码编写到script标签中
+        <script>
+            alert("我是script标签中的代码");
+        </script>
+    -->
+</head>
+
+<body>
+
+    <!-- 可以将js艾玛编写到标签的onclick属性中 
+           当我们点击按钮时，js代码才会执行
+
+        虽然可以写在标签的属性中，但属于结构与行为耦合，不方便维护 不推荐使用
+    -->
+    <button onclick="alert('讨厌 你点我干嘛~~')">点我一下</button>
+
+    <!-- 可以将jsdiamante写在超链接的href属性中；点击超链接时，会执行代码 -->
+    <a href="javascript:alert('让你点你就点')">你也点我一下</a>
+    <a href="javascript:;"></a>
+
+</body>
+
+</html>
