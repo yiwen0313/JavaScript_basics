@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        /*
+         * 强制类型转换：
+         *      将一个数据类型转换为其他数据类型，转换为String、Number、Boolean
+         * 
+         */
+
+        /*
+         * 将其他的数据类型转换为String
+         *     方式一： 调用被转换数据类型的toString()
+         *          - 不会影响圆变量，将转换结果返回
+         *          - 注意：null和undefined这两个值没有toString方法
+         * 
+         *     方式二：调用String(),并将被转换的数据作为参数传递给函数  
+         *          - 对于 Number 和 String 实际上就是调用toString()
+         *             对于null和undefined，直接转换为 "null"和"undefined"
+         */ 
+
+        var a = 123;
+        var b = a.toString();
+
+        c = 123;
+        c = String(c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
