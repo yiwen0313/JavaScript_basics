@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         * 将其它数据类型转换为Number
+         *     方式一： 使用Number()
+         *         - 字符串 ---> 数字    
+         *              纯数字 直接转换
+         *              含有非数字内容  转换为 NaN
+         *              空串或全是空格  转换为 0
+         * 
+         *         - Boolean ---> 数字
+         *               true  1
+         *               false 0
+         * 
+         *         - null ---> 数字  : 0
+         * 
+         *         - undefined ---> 数字 ； NaN
+         * 
+         *      
+         *      方式二：  用来对付字符串（如果对非字符串进行转换，会先将其转换为String再操作）
+         *         - parseInt()     
+         *              字符串 ---> 整数
+         *              将字符串有效整数内容取出，转换为Number
+         *         - parseFloat()   
+         *              字符串 ---> 浮点数
+         *               获得有效的小数
+         * 
+         */
+
+         var a = "123"; 
+
+         a = Number(a);
+         
+         console.log(typeof a); 
+         console.log(a);
+
+         a = "123px";
+         a = parseInt(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
