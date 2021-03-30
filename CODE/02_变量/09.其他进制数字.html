@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         * 在JS中，十六进制 0x开头；八进制  0开头；二进制 0b开头，不是所有浏览器都支持
+         *
+         * 
+         */
+         var a = 0x123;
+
+         a = 0b10;
+
+        // 像"070"这种字符串，有些浏览器会自动当成八进制解析，有些会当成十进制解析
+         a = "070";
+        //  可以在parseInt中传递第二个参数，来指定数字的进制
+         a = parseInt(a, 10);
+
+         console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
