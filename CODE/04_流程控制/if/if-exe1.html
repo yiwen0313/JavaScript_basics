@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // 小明的期末成绩
+        var score = prompt("情输入小明期末成绩:");
+
+        // 判断是否合法
+        if (score > 100 || score < 0 || isNaN()) {
+            alert("输入有误");
+        } else {
+
+            if (score == 100) {
+                alert("宝马拿去！");
+            } else if (score >= 80) {
+                alert("手机拿去！");
+            } else if (score >= 60) {
+                alert("参考书拿去！");
+            } else {
+                alert("棍子伺候");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
