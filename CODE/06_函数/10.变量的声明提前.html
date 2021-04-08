@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+         * 变量的声明提前
+         *    - 使用var关键字声明的变量，会在所有的代码执行之前被声明(不会赋值)
+         *    - 但如果声明变量时不适用var关键字，则变量不会被声明提前
+         *
+         * 函数的声明提前
+         *    - 使用函数声明形式创建的函数function 函数名(){}
+         *         它会在所有的代码执行之前就被创建，所以可以在函数声明前来调用函数
+         *    - 使用函数表达式创建的函数不会被声明提前
+         */
+        
+        var a = 123;
+        console.log("a = " + a);
+
+
+
+        fun();
+        
+        // 函数声明会被提前创建
+        function fun() {
+            console.log("我是fun函数");
+        }
+
+        // 函数表达式不会被提前创建
+        var fun2 = function() {
+            console.log("我是fun2函数");
+        };
+        
+        // fun2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
