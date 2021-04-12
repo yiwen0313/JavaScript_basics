@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var arr = new Array();
+
+        // 使用字面量创建数组
+        // var arr = [];
+
+        // 使用字面量创建数组时，可以在创建时就指定数组中的元素
+        // var arr1 = [1, 2, 3, 4, ,5 ,6 ];
+
+        /* 
+         * 使用构造函数创建数组时，也可以同时添加元素，将要添加的元素作为构造函数的参数传递，
+         * 元素之间使用 , 隔开 
+         * 
+         */
+        var arr2 = new Array(10, 20, 30);
+
+        // arr = [10];
+        // 创建一个长度为10的数组 （JS中不常用）
+        arr2 = new Array(10);
+
+        // console.log(arr2.length);
+
+        // 数组中的元素可以是任意的数据类型
+        var arr1 = ["hello", 1, true, null, undefined]; 
+
+        // 也可以是对象 
+        var obj = {name: "孙悟空"};
+        arr1[arr1.length] = obj; 
+        // console.log(arr1[5].name);   
+        
+        // 也可以是一个函数
+        var arr3 = [function(){alert(1)}, function(){alert(2)}];
+        // console.log(arr3);
+        arr3[0]();
+
+        // 数组中也可以放数组
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
