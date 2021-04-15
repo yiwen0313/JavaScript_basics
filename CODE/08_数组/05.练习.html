@@ -33,10 +33,15 @@
             var newArr = [];
 
             // 遍历arr，获取arr中的Person对象
+            for(var i = 0; i < arr.length; i++) {
+                // 判断Person对象的age是否大于等于18岁
+                if(arr[i].age >= 18) {
+                    // 如果大于等于18，添加到newArr中
+                    newArr.push(arr[i]);
+                }
 
-            // 判断Person对象的age是否大于等于18岁
+            }
 
-            // 如果大于等于18，添加到newArr中
             
             // 将新的数组返回
             return newArr;
