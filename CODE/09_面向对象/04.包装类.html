@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+         * 基本数据类型
+         *   String、Number、Boolean、Null、Undefined
+         * 引用数据类型
+         *   Object 
+         *  
+         * 在JS中我们提供了三个包装类，通过这三个包装类，可以将基本数据类型抓换位对象
+         *    String()
+         *       - 可以将基本数据类型字符串转化为String对象
+         *    Number()
+         *       - 可以将基本数据类型的数字转换为Number对象
+         *    Boolean()
+         *      - 可以将基本数据类型的布尔值转化为Boolean对象
+         * 
+         * 注意：实际应用中不会使用基本数据类型的对象
+         *      如果使用基本数据类型的对象，在做一些比较时，可能会带来一些不可预期的效  果
+         */
+        
+        // 创建了一个Number类型的对象
+        var num = new Number();
+
+        //向num中添加一个属性 
+        num.hello = "abcdefg";
+
+        console.log(num.hello)
+
+        /* 
+         * 方法和属性只能添加给对象，不能添加给基本数据类型
+         *  当对一些基本数据类型的值去调用属性和方法时，
+         *    浏览器会临时使用包装类将其转换为对象，然后再调用对象的属性和方法；
+         *    调用完以后，再将其转换为基本数据类型。
+         */
+        var s = 123;
+        s = s.toString();
+        console.log(s);
+        console.log(typeof s);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
