@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        //  创建一个正则表达式检查一个字符串是否含有aaa
+
+        /* 
+         * 量词
+         *    - 通过量词可以设置内容出现的此时
+         *    量词只对它前边的一个内容起作用
+         *    - {n}正好出现n次
+         *    - {m,n} 出现m-n次
+         *    - {m,} m次以上
+         */
+        var reg = /a{3}/;
+
+        // ababab
+        reg = /(ab){1,3}/;
+        
+        // + 表示至少一个 相当于{1,}
+        reg = /ab+c/;
+
+        // * 表示0个或多个，相当于{0,}
+        reg = /ab*c/;
+
+        // ? 表示0个或一个 相当于{0,1}
+
+        // console.log(reg.test("abccccc"));
+
+
+        // 检查一个字符串是否以a开头
+        //  ^ 表示开头
+        // $表示结尾
+        reg = /^a/; //匹配开头的啊
+        
+        reg = /a$/; //匹配结尾的啊
+        
+        // console.log(reg.test("abca"));
+
+        //如果在一个正则表达式中同时使用^$, 则要求字符串必须完全符合正则表达式
+        reg = /^a$/; //就只能是一个a 
+
+        // console.log(reg.test("a"));
+
+        
+        /* 
+         * 创建一个正则表达式，用来检查一个字符串是否是一个手机号
+         *   1. 以1开头             ^1
+         *   2. 第2位3-9任意数字    [3-9]
+         *   3. 三位以后任意数字9个  [0-9]{9}$       
+         */
+        var phoneStr = "15678901234";
+
+        var phoneReg = /^1[3-9][0-9]{9}$/;
+
+        console.log(phoneReg.test(phoneStr));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
