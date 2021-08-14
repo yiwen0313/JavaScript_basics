@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,15 +10,27 @@
         /* 
          * 浏览器在加载一个页面时，是按照自上向下的顺序加载的。
          *   读取到一行就运行一行，如果将script标签写到页面的上边，
-         *   在代码执行时，页面还没有加载    
+         *   在代码执行时，页面还没有加载，DOM对象也没有加载
+         *   会导致无法获取到DOM对象
          */
-    
-        // 获取id为btn的按钮
-        var btn = document.getElementById("btn");
-        // 为按钮绑定一个单击响应函数
-        btn.onclick = function(){
-            alert("hello");
+
+
+
+        /* 
+         * onload事件会在整个页面加载完成之后才触发
+         * 为Window绑定一个onload事件  
+         *     改事件对应的响应函数将会在页面加载完成之后执行
+         *     这样可以去确保我们的代码执行时所有的DOM对象已经加载完毕了
+         */
+        window.onload = function () {
+            // 获取id为btn的按钮
+            var btn = document.getElementById("btn");
+            // 为按钮绑定一个单击响应函数
+            btn.onclick = function () {
+                alert("hello");
+            };
         };
+
     </script>
 </head>
 
@@ -26,7 +39,6 @@
     <!-- <script>
         /* 
          * 将js代码编写到页面的下部就是为了，可以在页面加载完毕再执行js代码 
-         *
          */
         
         //  // 获取id为btn的按钮
@@ -37,4 +49,5 @@
         // };
     </script> -->
 </body>
+
 </html>
