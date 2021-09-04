@@ -96,28 +96,29 @@
              *    2.eventStr  事件的字符串
              *    3.callback  回调函数
              */
-            function bind(obj, eventStr, callback) {
-
-                if (obj.addEventListener) {
-                    // 大部分浏览器兼容的方式
-                    obj.addEventListener(eventStr, callback, false);
-                } else {
-                    /* 
-                     * this是谁是由调用方式决定的
-                     * callback.call(obj);  修改函数的this
-                     */
-                    
-                    // IE8及以下
-                    obj.attachEvent("on" + eventStr, function() {
-                        // 在匿名函数中，调用回调函数
-                        // 修改函数的this
-                        callback.call(obj);
-                    });
-                }
-
-            }
             
         };
+
+        function bind(obj, eventStr, callback) {
+
+            if (obj.addEventListener) {
+                // 大部分浏览器兼容的方式
+                obj.addEventListener(eventStr, callback, false);
+            } else {
+                /* 
+                 * this是谁是由调用方式决定的
+                 * callback.call(obj);  修改函数的this
+                 */
+                
+                // IE8及以下
+                obj.attachEvent("on" + eventStr, function() {
+                    // 在匿名函数中，调用回调函数
+                    // 修改函数的this
+                    callback.call(obj);
+                });
+            }
+
+        }
         
     </script>
 </head>
