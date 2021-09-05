@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,15 +14,55 @@
             position: absolute;
         }
     </style>
-    
+
     <script type="text/javascript">
 
         // 使div可以根据不同的方向向对应的方向移动
-        
-        
+
+        window.onload = function () {
+
+            // 为document绑定一个键盘按下的事件
+            document.onkeydown = function (event) {
+                event = event || window.event;
+
+                // 定义一个变量，来表示移动的速度
+                var speed = 10;                                                 
+
+                // 当用户按了Ctrl以后，速度加快
+                if (event.ctrlKey) {
+                    speed = 50;
+                }
+                
+                /* 
+                 * 37 ←
+                 * 38 ↑
+                 * 39 →
+                 * 40 ↓
+                 */
+                switch (event.keyCode) {
+                    case 37:
+                        // left值减小
+                        box1.style.left = box1.offsetLeft -speed + "px";
+                        break;
+                    case 39:
+                        box1.style.left = box1.offsetLeft + speed + "px";
+                        break;
+                    case 38:
+                        box1.style.top = box1.offsetTop - speed + "px";
+                        break;
+                    case 40:
+                        box1.style.top = box1.offsetTop + speed + "px";
+                        break;
+                }
+            };
+
+        };
+
     </script>
 </head>
+
 <body>
     <div id="box1"></div>
 </body>
+
 </html>
