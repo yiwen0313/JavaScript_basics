@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            position: absolute;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        // 使div可以根据不同的方向向对应的方向移动
+
+        window.onload = function () {
+
+            // 定义一个变量，来表示移动的速度
+            var speed = 10;
+
+            // 方向
+            // 通过修改dir，来修改元素移动的方向
+            var dir = 0;
+
+            // 开启一个定时器，控制div的移动速度
+            setInterval(function () {
+                /* 
+                 * 37 ←
+                 * 38 ↑
+                 * 39 →
+                 * 40 ↓
+                 */
+                switch (dir) {
+                    case 37:
+                        // left值减小
+                        box1.style.left = box1.offsetLeft - speed + "px";
+                        break;
+                    case 39:
+                        box1.style.left = box1.offsetLeft + speed + "px";
+                        break;
+                    case 38:
+                        box1.style.top = box1.offsetTop - speed + "px";
+                        break;
+                    case 40:
+                        box1.style.top = box1.offsetTop + speed + "px";
+                        break;
+                }
+            }, 30);
+
+
+            // 为document绑定一个键盘按下的事件
+            document.onkeydown = function (event) {
+                event = event || window.event;
+
+                // 当用户按了Ctrl以后，速度加快
+                if (event.ctrlKey) {
+                    speed = 500;
+                } else {
+                    speed = 10;
+                }
+
+                // 使dir等于按键的值
+                dir = event.keyCode;
+
+                // 当松开方向键，div停止移动
+                document.onkeyup = function() {
+                    dir = 0;
+                };
+
+            };
+
+        };
+
+    </script>
+</head>
+
+<body>
+    <div id="box1"></div>
+</body>
+
+</html>
