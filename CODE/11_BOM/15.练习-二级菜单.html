@@ -44,29 +44,57 @@
             // 定义一个变量，保存当前打开的菜单
             var openDiv = menuSpan[0].parentNode;
 
-            // 为menuSpan绑定单击响应函数
-            for (i = 0; i < menuSpan.length; i++) {
-                menuSpan[i].onclick = function() {
+            // 为Span绑定单击响应函数
+            for (var i = 0; i < menuSpan.length; i++) {
+                menuSpan[i].onclick = function () {
                     // this代表当前点击的span
                     // 获取当前span的父元素
-                    var parentDiv = this.parentElement;
+                    var parentDiv = this.parentNode;
 
-                    // 改变parentDiv
-                    toggleClass(parentDiv, "collapsed");
+                    // 切换菜单折叠展开过渡效果
+                    toggleMenu(parentDiv);
 
-                    if((openDiv != parentDiv) && !(hasClass(openDiv, "collapsed"))) {
+                    if ((openDiv != parentDiv) && !hasClass(openDiv, "collapsed")) {
                         // 打开菜单以后，应该关闭之前打开的菜单
                         // addClass(openDiv, "collapsed");
                         // 为了可以统一处理动画的过渡效果，我们希望在这将addClass改为toggleClass
                         // 此处toggleClass()不需要有移除的功能
-                        toggleClass(openDiv, "collapsed");
+                        // toggleClass(openDiv, "collapsed");
+                        // 切换菜单折叠展开过渡效果
+                        toggleMenu(openDiv);
                     }
 
                     // 修改openDiv为当前打开的菜单
                     openDiv = parentDiv;
                 };
             }
-            
+
+
+            /* 
+             * 用来切换菜单折叠展开过渡效果
+             */
+            function toggleMenu(obj) {
+                // 在切换类之前，获取元素的高度
+                var begin = obj.offsetHeight;
+
+                // 切换parentDiv
+                toggleClass(obj, "collapsed");
+
+                // 在切换类之后，获取元素的高度
+                var end = obj.offsetHeight;
+
+                console.log(begin, end);
+                // 动画效果就是将高度从begin向end过渡
+                // 将元素的高度重置为begin
+                obj.style.height = begin + "px";
+
+                // 执行动画，从begin向end过渡
+                move(obj, "height", end, 10, function () {
+                    // 动画执行完毕，内联样式已经没有存在的意义了，删掉内联样式
+                    obj.style.height = "";
+                });
+            }
+
         };
     </script>
 </head>
